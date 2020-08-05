@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li{
+  list-style: none;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inside-container{
+  max-width:1100px !important;
+  margin:0 auto;
+  padding:0 10px;
+}
+
+.container{
+  margin:0 auto;
+  background: rgb(66,74,92);
+}
+
+nav{
+  background: rgb(66,74,92);
+  max-width: 1100px;
+  margin:0 auto;
+}
+
+ .sticky{
+  position: sticky !important;
+  top:0;
+  z-index: 10;
+} 
+
+
+nav .logo-btn{
+  border-bottom: 1px solid #ccc;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding:10px 10px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+nav .logo-btn img{
+  width: 40px;
+  padding-right: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav .logo-btn a{
+  font-size: 20px;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  font-style: italic;
 }
+
+nav .logo-btn .shoes{
+color: red;
+padding-right: 5px;
+}
+
+nav .logo-btn .btn{
+  color:#fefefe;
+  cursor: pointer;
+}
+
+.links{
+  background: rgb(98,104,117);
+  /* transform: translate(-100%); */
+  transform: translateY(-120%);
+  position: fixed;
+  width: 100%;
+  top:56px;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.newLinks{
+  transform: translate(0);
+  bottom:0;
+  top:56px;
+  width:100%;
+  position: fixed;
+}
+
+.links li a{
+  color:rgb(209,208,207);
+  display: block;
+  padding:10px;
+  position: relative;
+  font-size:18px;
+  text-transform: capitalize;
+  border-bottom: 1px solid gray;
+  transition: all 0.5s ease-in-out;
+}
+
+.links li a:hover{
+padding:10px 20px;
+color: white;
+}
+
+.links li a:after{
+content: '';
+position: absolute;
+width:100%;
+border:1px dashed gray;
+height: auto;
+display: block;
+bottom: 0;
+transition: all 0.5s ease-in-out;
+left:-100%;
+}
+
+.links li a:hover:after{
+  
+  left:0%;
+  }
+
+
+  @media screen and (min-width:664px){
+nav .logo-btn{
+  border-bottom: none;
+}
+
+.logo-btn .btn{
+  display: none;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.links{
+  display: flex;
+  transform: translate(0);
+  width:auto;
+  position: relative;
+  background: transparent;
+  top:auto;
+  bottom:auto;
+  
+}
+
+.newLinks{
+  transform: translate(0);
+  bottom: 0;
+  top:auto;
+  width:auto;
+  position: relative;
+
+}
+
+.links li a{
+  border-bottom: none;
+}
+
+.links li a:hover{
+padding:10px;
+}
+
+.links li a:after{
+  border:none;
+}
+
+.links li a:hover:after{
+  display: none;
+}
+
+
+
+  }
+
+
+
+  /* header */
+  header{
+ background: url('./logo.jpg') center /cover no-repeat;
+ min-height: 90vh;
+  }
+
+  header h1{
+  color:wheat;
+  text-align: center;
+  padding-top:100px;
+  text-transform: capitalize;
+  font-size:50px;
+  font-style: italic;
+
+  }
+
+  header h1 span{
+    color:red;
+    font-size:55px;
+    animation-name:cool;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cool{
+    0%{
+      color:red;
+      opacity: 0;
+    }
+
+    50%{
+      color:gray;
+      opacity: 0;
+    }
+
+    100%{
+      color:red;
+      opacity: 1;
+    }
+  }
